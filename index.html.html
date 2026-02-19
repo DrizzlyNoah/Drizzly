@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drizzly Noah</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:radial-gradient(circle at top left,#1b1b1b,#000 70%);
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* PREMIUM WATERMARK */
+body::after{
+  content:"DRIZZLY NOAH";
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-family:'Anton',sans-serif;
+  font-size:14vw;
+  letter-spacing:18px;
+  color:rgba(255,255,255,0.03);
+  pointer-events:none;
+  user-select:none;
+  white-space:nowrap;
+  z-index:0;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:20px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:10;
+}
+nav .logo{
+  font-family:'Anton',sans-serif;
+  letter-spacing:4px;
+}
+nav ul{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:0.85rem;
+  opacity:0.7;
+}
+nav a:hover{opacity:1}
+
+/* SECTIONS */
+section{
+  max-width:1200px;
+  margin:0 auto;
+  padding:140px 40px;
+  position:relative;
+  z-index:1;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  gap:30px;
+  padding-top:120px;
+}
+
+/* PFP */
+.pfp-wrap{
+  padding:6px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ff2b2b,#7a0000);
+  box-shadow:0 0 60px rgba(255,43,43,0.4);
+}
+.pfp{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:url('https://i.pinimg.com/originals/19/26/12/1926122a7360b559d5d9465a14226bf9.jpg') center/cover no-repeat;
+  transform-style:preserve-3d;
+  transition:transform 0.1s ease;
+}
+
+/* TITLE */
+.hero h1{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(3rem,9vw,6rem);
+  letter-spacing:6px;
+}
+.hero h1 span{color:#ff2b2b}
+
+/* STATS */
+.stats{
+  display:flex;
+  gap:30px;
+  margin-top:20px;
+}
+.stat{
+  background:rgba(255,255,255,0.04);
+  padding:25px 35px;
+  border-radius:14px;
+  min-width:160px;
+}
+.stat h2{font-size:1.8rem}
+.stat p{opacity:0.6;font-size:0.85rem}
+
+/* HEADINGS */
+.section-title{
+  font-family:'Anton',sans-serif;
+  letter-spacing:4px;
+  margin-bottom:40px;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+.gallery-item{
+  height:180px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#222,#000);
+  box-shadow:0 30px 80px rgba(0,0,0,0.7);
+}
+
+/* FOOTER */
+footer{
+  padding:80px 20px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-bottom:25px;
+}
+.socials img{
+  width:28px;
+  opacity:0.7;
+}
+.socials img:hover{opacity:1}
+
+.footer-line{
+  height:1px;
+  width:400px;
+  margin:20px auto;
+  background:linear-gradient(to right,transparent,rgba(255,255,255,0.25),transparent);
+}
+
+footer p{
+  font-size:0.85rem;
+  opacity:0.4;
+}
+
+/* SCROLL ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">DN</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="pfp-wrap">
+    <div class="pfp" id="pfp"></div>
+  </div>
+
+  <h1>DRIZZLY <span>NOAH</span></h1>
+
+  <div class="stats">
+    <div class="stat">
+      <h2>30+</h2>
+      <p>Videos</p>
+    </div>
+    <div class="stat">
+      <h2>High</h2>
+      <p>Visual Quality</p>
+    </div>
+    <div class="stat">
+      <h2>Cinematic</h2>
+      <p>Car Edits</p>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="reveal">
+  <h2 class="section-title">WORK WITH ME</h2>
+  <p style="opacity:0.75;max-width:700px">
+    Cinematic automotive edits focused on speed, sound,
+    and impact. Open for brands, collaborations,
+    and serious creative projects.
+  </p>
+</section>
+
+<section id="gallery" class="reveal">
+  <h2 class="section-title">GALLERY</h2>
+  <div class="gallery">
+    <div class="gallery-item"></div>
+    <div class="gallery-item"></div>
+    <div class="gallery-item"></div>
+    <div class="gallery-item"></div>
+    <div class="gallery-item"></div>
+    <div class="gallery-item"></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="socials">
+    <a href="https://www.youtube.com/@DrizzlyNoah" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+    </a>
+    <a href="https://www.instagram.com/drizzly.noah/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png">
+    </a>
+  </div>
+
+  <div class="footer-line"></div>
+  <p>© 2026 Drizzly Noah — All Rights Reserved</p>
+</footer>
+
+<script>
+// PFP 3D tilt
+const pfp=document.getElementById('pfp');
+document.addEventListener('mousemove',e=>{
+  const x=(window.innerWidth/2-e.clientX)/30;
+  const y=(window.innerHeight/2-e.clientY)/30;
+  pfp.style.transform=`rotateY(${x}deg) rotateX(${y}deg) translateZ(20px)`;
+});
+
+// Scroll reveal
+const reveals=document.querySelectorAll('.reveal');
+window.addEventListener('scroll',()=>{
+  reveals.forEach(el=>{
+    const top=el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
